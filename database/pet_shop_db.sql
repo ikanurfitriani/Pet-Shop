@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 30 Des 2023 pada 06.38
+-- Waktu pembuatan: 30 Des 2023 pada 07.26
 -- Versi server: 10.4.28-MariaDB
 -- Versi PHP: 8.0.28
 
@@ -41,8 +41,8 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`id`, `client_id`, `inventory_id`, `price`, `quantity`, `date_created`) VALUES
-(5, 2, 2, 75000, 1, '2023-12-30 12:37:12'),
-(6, 2, 17, 750000, 1, '2023-12-30 12:37:17');
+(8, 2, 2, 75000, 1, '2023-12-30 13:19:43'),
+(9, 2, 17, 750000, 1, '2023-12-30 13:19:54');
 
 -- --------------------------------------------------------
 
@@ -114,7 +114,7 @@ CREATE TABLE `inventory` (
 --
 
 INSERT INTO `inventory` (`id`, `product_id`, `quantity`, `unit`, `price`, `size`, `date_created`, `date_updated`) VALUES
-(1, 1, 50, 'pcs', 250, 'M', '2023-06-21 13:01:30', '2023-06-21 13:05:23'),
+(1, 1, 50, 'pcs', 50000, 'M', '2023-06-21 13:01:30', '2023-12-30 13:19:21'),
 (2, 1, 20, 'Sample', 75000, 'L', '2023-06-21 13:07:00', '2023-12-30 08:30:11'),
 (3, 4, 150, 'pcs', 45000, 'M', '2023-06-21 16:50:37', '2023-12-30 08:31:22'),
 (4, 3, 50, 'pack', 65000, 'M', '2023-06-21 16:51:12', '2023-12-30 08:30:53'),
@@ -158,7 +158,8 @@ CREATE TABLE `orders` (
 
 INSERT INTO `orders` (`id`, `client_id`, `delivery_address`, `payment_method`, `amount`, `status`, `paid`, `date_created`, `date_updated`) VALUES
 (1, 1, 'Sample Address', 'Online Payment', 1100, 2, 1, '2023-06-22 13:48:54', '2023-06-22 14:49:15'),
-(2, 1, 'Sample Address', 'cod', 750, 3, 1, '2023-06-22 15:26:07', '2023-06-22 15:32:55');
+(2, 1, 'Sample Address', 'cod', 750, 3, 1, '2023-06-22 15:26:07', '2023-06-22 15:32:55'),
+(4, 2, 'Yogyakarta', 'cod', 825000, 0, 0, '2023-12-30 13:13:54', NULL);
 
 -- --------------------------------------------------------
 
@@ -183,7 +184,9 @@ CREATE TABLE `order_list` (
 
 INSERT INTO `order_list` (`id`, `order_id`, `product_id`, `size`, `unit`, `quantity`, `price`, `total`) VALUES
 (1, 1, 4, 'L', 'pcs', 2, 550, 1100),
-(2, 2, 3, 'M', 'pack', 5, 150, 750);
+(2, 2, 3, 'M', 'pack', 5, 150, 750),
+(5, 4, 1, 'L', 'Sample', 1, 75000, 75000),
+(6, 4, 15, 'L', 'pcs', 1, 750000, 750000);
 
 -- --------------------------------------------------------
 
@@ -242,7 +245,8 @@ CREATE TABLE `sales` (
 
 INSERT INTO `sales` (`id`, `order_id`, `total_amount`, `date_created`) VALUES
 (1, 1, 1100, '2023-06-22 13:48:54'),
-(2, 2, 750, '2023-06-22 15:26:07');
+(2, 2, 750, '2023-06-22 15:26:07'),
+(4, 4, 825000, '2023-12-30 13:13:54');
 
 -- --------------------------------------------------------
 
@@ -431,7 +435,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT untuk tabel `categories`
@@ -455,13 +459,13 @@ ALTER TABLE `inventory`
 -- AUTO_INCREMENT untuk tabel `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `order_list`
 --
 ALTER TABLE `order_list`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `products`
@@ -473,7 +477,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT untuk tabel `sales`
 --
 ALTER TABLE `sales`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `sizes`
