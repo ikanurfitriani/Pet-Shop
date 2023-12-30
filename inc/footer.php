@@ -60,8 +60,8 @@
 </script>
 <!-- Footer-->
 <footer class="py-5 bg-dark">
-            <div class="container">
-              <p class="m-0 text-center text-white"><?php echo $_settings->info('short_name') ?> By : Wildan, Ika, Natalia dan Ilham</p>
+          <div class="container">
+              <p class="m-0 text-center text-white"><?php echo $_settings->info('short_name') ?> By : WINI</p>
           </div>
         </footer>
 
