@@ -9,3 +9,9 @@ Repositori ini berisi project untuk mata kuliah Proyek Pengembangan Aplikasi Web
 - Create a database with name pet_shop_db <br>
 - Import pet_shop_db.sql file(given inside the zip package in SQL file folder) <br>
 - Run the script http:/pet_shop
+
+### Team
+<li>Wildan Assyidiq (205410134)</li>
+<li>Ika Nurfitriani (205410116)</li>
+<li>Natalia Fransiska (205410135)</li>
+<li>Ilham Muliawan (205410149)</li>
